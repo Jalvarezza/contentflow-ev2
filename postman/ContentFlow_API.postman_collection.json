@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "ContentFlow API - Evaluacion Parcial 2",
+    "description": "Colección de endpoints REST conectados a MongoDB Atlas (BD: contentflow).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET Publicaciones por Categoría",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/publicaciones?categoria=Deportes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "publicaciones"
+          ],
+          "query": [
+            {
+              "key": "categoria",
+              "value": "Deportes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. GET Analítica Top 5 Engagement",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/analitica/top-engagement",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "analitica",
+            "top-engagement"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. POST Crear Nueva Publicación",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"_id\": \"pub_api_777\",\n  \"usuario_id\": \"user_10\",\n  \"contenido\": \"Publicación creada desde API hacia MongoDB Atlas.\",\n  \"categoria\": \"Tecnología\",\n  \"hashtags\": [\"#API\", \"#ContentFlow\"],\n  \"tipo\": \"Imagen\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/publicaciones",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "publicaciones"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. PATCH Incrementar Likes ($inc)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/comentarios/comm_1/like",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "comentarios",
+            "comm_1",
+            "like"
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. DELETE Eliminar Publicación",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/publicaciones/pub_api_777",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "publicaciones",
+            "pub_api_777"
+          ]
+        }
+      }
+    }
+  ]
+}
